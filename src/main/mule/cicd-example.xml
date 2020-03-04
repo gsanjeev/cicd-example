@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="dfb09f12-ac35-4166-9498-b768ed13f23d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicd-exampleFlow" doc:id="cbb27913-6615-4762-b240-3882bb93bb99" >
+		<http:listener doc:name="Listener" doc:id="4ad57f5a-5688-4113-9f87-817018ce5aa2" config-ref="HTTP_Listener_config" path="greet" allowedMethods="GET"/>
+		<logger level="INFO" doc:name="Logger" doc:id="63f03a0d-9653-4534-910b-569c21280819" />
+		<ee:transform doc:name="Transform Message" doc:id="93263860-7f12-49d9-8f5f-f133dc5ebea8" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"greeting" : "Welcome!!!!!"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
