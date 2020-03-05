@@ -2,8 +2,8 @@
 
 /**
  *
- * Author:    Naresh Manthrabuddi
- * Created:   27.12.2019
+ * Author:    Sanjeev Tripathi
+ * Created:   05.03.2020
  * 
  **/
 
@@ -230,7 +230,7 @@ def UDF_ArtifactUploadToNexus()
 				 type: 'jar']
 			]
 		 )
-	    echo 'Artifact Copy to Nexus Completed'
+	    echo 'Artifact saved to Nexus repository.'
 	}catch(error) {
 		throw(error)
 		SendEmail("","","Failed")
