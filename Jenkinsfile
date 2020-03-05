@@ -45,7 +45,7 @@ node {
             name: 'BUILD_MECHANISM'
        ),
        choiceParam(
-         choices: 'development\nSIT\nTEST\nPREPROD\nPROD',
+         choices: 'DEV\nSIT\nTEST\nPREPROD\nPROD',
             description: 'Please select the ENVIRONMENT for Deployment',
             name: 'ENVIRONMENT'
        ),
@@ -76,7 +76,7 @@ node {
        ),
        string(
 		   name: 'ANYPOINT_ORGANIZATION', 
-		   defaultValue: 'LnD', 
+		   defaultValue: 'laxtech', 
 		   description: 'Please provide CloudHub Anypoint Organization name to deploy?'
 	   )
      ])
@@ -268,25 +268,25 @@ def UDF_DeployToCloudHub() {
     	Setting the environment
     */
 
-	if("${params.ENVIRONMENT}" == 'development') {
+	if("${params.ENVIRONMENT}" == 'DEV') {
 
-		v_anypointCredentialID = 'bccc9153-9fda-40b4-b266-70fbbb0176c8'
+		v_anypointCredentialID = 'ae904d46bab74e708069607bdd06ee52'
 
 	} else if("${params.ENVIRONMENT}" == 'SIT') {
 
-		v_anypointCredentialID= 'bccc9153-9fda-40b4-b266-70fbbb0176c8'
+		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
 
 	} else if("${params.ENVIRONMENT}" == 'TEST') {
 
-		v_anypointCredentialID= 'bccc9153-9fda-40b4-b266-70fbbb0176c8'
+		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
 
 	} else if("${params.ENVIRONMENT}" == 'PREPROD') {
 
-		v_anypointCredentialID= 'bccc9153-9fda-40b4-b266-70fbbb0176c8'
+		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
 
 	} else if("${params.ENVIRONMENT}" == 'PROD') {
 
-		v_anypointCredentialID= 'bccc9153-9fda-40b4-b266-70fbbb0176c8'
+		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
 	}
 
 	/* 
