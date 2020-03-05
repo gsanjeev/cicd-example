@@ -87,11 +87,11 @@ node {
 					UDF_BuildSourceCode()
 						
 				stage 'Notification'
-					SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","success")
+					SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","success")
 					
 			} catch(error) {
 				throw(error)
-				SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+				SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 
 			}		
 		} else if(params.BUILD_MECHANISM == 'BUILD-MUNITS-SONAR') {
@@ -103,11 +103,11 @@ node {
 					UDF_ExecuteSonarQubeRules()
 			
 				stage 'Notification'
-					SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Success")
+					SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Success")
 
 			} catch(error) {
 				throw(error)
-				SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+				SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 			}
 
 		} else if(params.BUILD_MECHANISM == 'BUILD-MUNITS-SONAR-RELEASE') {
@@ -122,11 +122,11 @@ node {
 					UDF_ArtifactUploadToNexus()
 
 				stage 'Notification'
-					SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Success")	
+					SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Success")	
 
 			} catch(error) {
 				throw(error)
-				SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+				SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 			}
 
 		}  else if(params.BUILD_MECHANISM == 'BUILD-MUNITS-SONAR-RELEASE-DEPLOY') {
@@ -144,11 +144,11 @@ node {
 					UDF_DeployToCloudHub()
 
 				stage 'Notification'
-					SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Success")	
+					SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Success")	
 
 			} catch(error) {
 				throw(error)
-				SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+				SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 			}
 		}
 }
@@ -164,7 +164,7 @@ def UDF_BuildSourceCode()
 		sh 'mvn clean package'	
 	}catch(error) {
 		throw(error)
-		SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 	}
 }
 
@@ -180,7 +180,7 @@ def UDF_ExecuteSonarQubeRules()
 		echo 'SonarQube Rules Execution Completed'	
 	} catch(error) {
 		throw(error)
-		SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 	}
 }
 
@@ -432,7 +432,7 @@ def UDF_GetGitRepoName() {
 	}catch(error)
 	{
 		throw(error)
-		SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 	}
 }
 
@@ -451,7 +451,7 @@ def UDF_GetPOMData(udfp_PomName, udfp_PropertyName){
 	}catch(error)
 	{
 		throw(error)
-		SendEmail("naresh.manthrabuddi@whishworks.com","naresh.manthrabuddi@whishworks.com","Failed")
+		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
 	}
 }
 
@@ -475,9 +475,9 @@ def SendEmail(udfp_ToAddress, udfp_FromAddress, udfp_Status)
 		/*
 		mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}) ${body}",
 				body: "It appears that ${env.BUILD_URL} is ${body}",
-				  to: "naresh.manthrabuddi@whishworks.com",
-			 replyTo: "naresh.manthrabuddi@whishworks.com",
-				from: "naresh.manthrabuddi@whishworks.com"
+				  to: "gsanjeevtripathi@gmail.com",
+			 replyTo: "gsanjeevtripathi@gmail.com",
+				from: "gsanjeevtripathi@gmail.com"
 		*/
 				
 	}catch(error)
