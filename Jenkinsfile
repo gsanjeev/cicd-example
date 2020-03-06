@@ -136,10 +136,10 @@ node {
 					
 				stage 'SonarQube Analysis'
 					UDF_ExecuteSonarQubeRules()
-
+/*
 				stage 'ArtifactUploadToNexus'
 					UDF_ArtifactUploadToNexus()
-
+*/
 				stage 'DeployToCloudHub'
 					UDF_DeployToCloudHub()
 
