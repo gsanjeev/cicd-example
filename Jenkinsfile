@@ -444,7 +444,10 @@ This function returns the POM Data
 def UDF_GetPOMData(udfp_PomName, udfp_PropertyName){	
 	try{
 	def resultVal = ""
+	echo "Reading pom file is: "
 	def pomFile = readFile(udfp_PomName)
+	echo "Read pom file."
+	echo "pomFile pom file is: " + pomFile
 	def pom = new XmlParser().parseText(pomFile)
 	def gavMap = [:]
 	resultVal =  pom[udfp_PropertyName].text().trim()
