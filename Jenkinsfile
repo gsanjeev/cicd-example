@@ -259,6 +259,7 @@ def UDF_DeployToCloudHub() {
 	v_muleEnv = ""
 	v_region = "${params.REGION}"
 	v_encryptKey = ""
+	echo "env.WORKSPACE is: ${env.WORKSPACE}"
 	v_artifactId = UDF_GetPOMData("${env.WORKSPACE}/pom.xml","artifactId")
 	v_version = UDF_GetPOMData("${env.WORKSPACE}/pom.xml","version")
 	v_package = UDF_GetPOMData("${env.WORKSPACE}/pom.xml","packaging")
