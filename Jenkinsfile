@@ -66,7 +66,7 @@ node {
 		),         
        string(
 		   name: 'APPLICATION_NAME', 
-		   defaultValue: 'cicd-demo', 
+		   defaultValue: 'cicd-example', 
 		   description: 'Please enter the application name for CloudHub Deployment?'
 	   ),
        choiceParam(
