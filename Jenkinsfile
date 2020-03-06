@@ -161,7 +161,7 @@ This function provides the functionality to build your clode
 def UDF_BuildSourceCode()
 {	
 	try	{
-		sh 'mvn clean package'	
+		bat 'mvn clean package'	
 	}catch(error) {
 		throw(error)
 		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")

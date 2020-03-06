@@ -17,7 +17,7 @@
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 
 		<anypoint.url>https://anypoint.mulesoft.com</anypoint.url>
-		<app.runtime>${muleVersion}</app.runtime>
+		<app.runtime>4.2.0</app.runtime>
 		<anypoint.region>${region}</anypoint.region>
 		<anypoint.env>${environment}</anypoint.env>
 		<anypoint.workerType>${workerType}</anypoint.workerType>
@@ -61,7 +61,8 @@
 							<env>${env}</env>
 						</properties>
 					</cloudHubDeployment>
-				</configuration>
+				<classifier>mule-application</classifier>
+                </configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
