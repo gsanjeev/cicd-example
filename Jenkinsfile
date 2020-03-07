@@ -396,6 +396,7 @@ def UDF_DeployToCloudHub() {
 
     }
 
+	v_environment = "dev"
 	echo "ENVIRONMENT is : ${v_environment}"
 	echo "BUILD_MECHANISM is : ${v_buildMechanism}"
 	echo "MULE_RUNTIME_VERSION is : ${v_muleRuntimeEnvironment}"
@@ -409,12 +410,13 @@ def UDF_DeployToCloudHub() {
 	echo "ANYPOINT_CREDENTIAL_ID is : ${v_anypointCredentialID}"
 	echo "Region : ${v_region}"
 	//-DbusinessGroupId=5a1efa6d-e32c-440c-b3bb-978fc5ae507b
+		
+    echo "username : ${ANYPOINT_USERNAME}"
+    echo "password : ${ANYPOINT_PASSWORD}"
 
 	withCredentials([usernamePassword(credentialsId: "${v_anypointCredentialID}",passwordVariable: 'ANYPOINT_PASSWORD',usernameVariable: 'ANYPOINT_USERNAME')])
 	{
-	
-        echo "username : ${ANYPOINT_USERNAME}"
-        echo "password : ${ANYPOINT_PASSWORD}"
+
 		bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD} -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
 	}
 }
