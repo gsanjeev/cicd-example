@@ -396,7 +396,7 @@ def UDF_DeployToCloudHub() {
 
     }
 
-	v_environment = "dev"
+	v_anypointEnvironment = "dev"
 	echo "ENVIRONMENT is : ${v_environment}"
 	echo "BUILD_MECHANISM is : ${v_buildMechanism}"
 	echo "MULE_RUNTIME_VERSION is : ${v_muleRuntimeEnvironment}"
