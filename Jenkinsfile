@@ -411,8 +411,8 @@ def UDF_DeployToCloudHub() {
 	echo "Region : ${v_region}"
 	//-DbusinessGroupId=5a1efa6d-e32c-440c-b3bb-978fc5ae507b
 		
-    echo "username : ${ANYPOINT_USERNAME}"
-    echo "password : ${ANYPOINT_PASSWORD}"
+    //echo "username : ${ANYPOINT_USERNAME}"
+    //echo "password : ${ANYPOINT_PASSWORD}"
 
 	withCredentials([usernamePassword(credentialsId: "${v_anypointCredentialID}",passwordVariable: 'ANYPOINT_PASSWORD',usernameVariable: 'ANYPOINT_USERNAME')])
 	{
