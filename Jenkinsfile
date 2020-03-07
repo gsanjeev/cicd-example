@@ -416,8 +416,8 @@ def UDF_DeployToCloudHub() {
 
 	withCredentials([usernamePassword(credentialsId: "${v_anypointCredentialID}",passwordVariable: 'ANYPOINT_PASSWORD',usernameVariable: 'ANYPOINT_USERNAME')])
 	{
-
-		bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD} -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
+//		bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD} -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
+		bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=sanjeev19 -Danypoint.password=Pa55word5 -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
 	}
 }
 
