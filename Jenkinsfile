@@ -259,7 +259,7 @@ def UDF_DeployToCloudHub() {
 	v_muleEnv = ""
 	v_region = "${params.REGION}"
 	v_encryptKey = ""
-	echo "env.WORKSPACE is: ${env.WORKSPACE}"
+	//echo "env.WORKSPACE is: ${env.WORKSPACE}"
 	v_artifactId = UDF_GetPOMData("${env.WORKSPACE}/pom.xml","artifactId")
 	v_version = UDF_GetPOMData("${env.WORKSPACE}/pom.xml","version")
 	v_package = UDF_GetPOMData("${env.WORKSPACE}/pom.xml","packaging")
@@ -412,7 +412,9 @@ def UDF_DeployToCloudHub() {
 
 	withCredentials([usernamePassword(credentialsId: "${v_anypointCredentialID}",passwordVariable: 'ANYPOINT_PASSWORD',usernameVariable: 'ANYPOINT_USERNAME')])
 	{
-
+	
+        echo "username : ${ANYPOINT_USERNAME}"
+        echo "password : ${ANYPOINT_PASSWORD}"
 		bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD} -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
 	}
 }
@@ -444,10 +446,10 @@ This function returns the POM Data
 def UDF_GetPOMData(udfp_PomName, udfp_PropertyName){	
 	try{
 	def resultVal = ""
-	echo "Reading pom file is: "
+	//echo "Reading pom file is: "
 	def pomFile = readFile(udfp_PomName)
-	echo "Read pom file."
-	echo "pomFile pom file is: " + pomFile
+	//echo "Read pom file."
+	//echo "pomFile pom file is: " + pomFile
 	def pom = new XmlParser().parseText(pomFile)
 	def gavMap = [:]
 	resultVal =  pom[udfp_PropertyName].text().trim()
