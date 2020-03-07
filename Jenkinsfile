@@ -271,23 +271,23 @@ def UDF_DeployToCloudHub() {
 
 	if("${params.ENVIRONMENT}" == 'DEV') {
 
-		v_anypointCredentialID = 'ae904d46bab74e708069607bdd06ee52'
+		v_anypointCredentialID = '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
 	} else if("${params.ENVIRONMENT}" == 'SIT') {
 
-		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
+		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
 	} else if("${params.ENVIRONMENT}" == 'TEST') {
 
-		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
+		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
 	} else if("${params.ENVIRONMENT}" == 'PREPROD') {
 
-		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
+		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
 	} else if("${params.ENVIRONMENT}" == 'PROD') {
 
-		v_anypointCredentialID= 'ae904d46bab74e708069607bdd06ee52'
+		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 	}
 
 	/* 
@@ -411,13 +411,10 @@ def UDF_DeployToCloudHub() {
 	echo "Region : ${v_region}"
 	//-DbusinessGroupId=5a1efa6d-e32c-440c-b3bb-978fc5ae507b
 		
-    //echo "username : ${ANYPOINT_USERNAME}"
-    //echo "password : ${ANYPOINT_PASSWORD}"
-
-	withCredentials([usernamePassword(credentialsId: "${v_anypointCredentialID}",passwordVariable: 'Pa55word5',usernameVariable: 'sanjeev19')])
+	withCredentials([usernamePassword(credentialsId: "${v_anypointCredentialID}",passwordVariable: 'ANYPOINT_PASSWORD',usernameVariable: 'ANYPOINT_USERNAME')])
 	{
+
 		bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD} -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
-		//bat "mvn deploy -DmuleDeploy -DskipTests=true -Danypoint.username=sanjeev19 -Danypoint.password=Pa55word5 -Denvironment=${v_anypointEnvironment} -DbusinessGroup=${v_anypointOrganization} -Dworkers=${v_workers} -DworkerType=${v_workerType} -DmuleVersion=${v_muleRuntimeEnvironment} -DapplicationName=${v_applicationName}"
 	}
 }
 
