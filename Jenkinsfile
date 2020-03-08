@@ -20,7 +20,7 @@ pipeline {
 }
 node {
 
-	def v_environment = ""
+	//def v_environment = ""
 	def v_buildMechanism = ""
 	def v_muleRuntimeEnvironment = ""
 	def v_workers = ""
@@ -247,7 +247,7 @@ def UDF_DeployToCloudHub() {
 
 	echo "###### Application Deployment Stage ######"
 
-	v_environment = "${params.ENVIRONMENT}"
+	//v_environment = "${params.ENVIRONMENT}"
 	v_buildMechanism ="${params.BUILD_MECHANISM}"
 	v_muleRuntimeEnvironment ="${params.MULE_RUNTIME_VERSION}"
 	v_applicationName = "${params.APPLICATION_NAME}"
@@ -272,18 +272,22 @@ def UDF_DeployToCloudHub() {
 	if("${params.ENVIRONMENT}" == 'dev') {
 
 		v_anypointCredentialID = '171e30c9-59ad-41dd-8690-cb3df34408ee'
+		v_applicationName = v_applicationName + 'dev'
 
 	} else if("${params.ENVIRONMENT}" == 'sit') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
+		v_applicationName = v_applicationName + 'sit'
 
 	} else if("${params.ENVIRONMENT}" == 'test') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
+		v_applicationName = v_applicationName + 'test'
 
 	} else if("${params.ENVIRONMENT}" == 'prepod') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
+		v_applicationName = v_applicationName + 'prepod'
 
 	} else if("${params.ENVIRONMENT}" == 'prod') {
 
@@ -396,8 +400,7 @@ def UDF_DeployToCloudHub() {
 
     }
 
-	//v_anypointEnvironment = "dev"
-	echo "ENVIRONMENT is : ${v_environment}"
+	//echo "ENVIRONMENT is : ${v_environment}"
 	echo "BUILD_MECHANISM is : ${v_buildMechanism}"
 	echo "MULE_RUNTIME_VERSION is : ${v_muleRuntimeEnvironment}"
 	echo "WORKERS : ${v_workers}"
