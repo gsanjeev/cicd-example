@@ -164,7 +164,7 @@ def UDF_BuildSourceCode()
 	try	{
 		/*echo "mvnSettings : ${mvnSettings}"
 		bat "mvn clean package --settings ${mvnSettings}"	*/
-		withMaven(maven: 'M3', mavenSettingsConfig: '378899f4-160c-48db-9f5d-8002b5472b7a') {
+		withMaven(mavenSettingsConfig: '378899f4-160c-48db-9f5d-8002b5472b7a') {
 			bat "mvn clean package "	
 		}
 	}catch(error) {
