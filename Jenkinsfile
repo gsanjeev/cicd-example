@@ -35,6 +35,7 @@ node {
 	def v_package = ""
 	def v_downloadFilePath = ""
 	def downloadFilePath = ""
+	def mvnSettings = "C:\\Users\\stripathi\\.m2\\settings.xml"
 
 	properties([
      parameters([
@@ -160,7 +161,8 @@ This function provides the functionality to build your clode
 def UDF_BuildSourceCode()
 {	
 	try	{
-		bat 'mvn clean package'	
+		echo "mvnSettings : ${mvnSettings}"
+		bat 'mvn clean package --settings ${mvnSettings}'	
 	}catch(error) {
 		throw(error)
 		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
