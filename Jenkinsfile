@@ -69,7 +69,7 @@ node {
 		   description: 'Please enter the application name for CloudHub Deployment?'
 	   ),
        choiceParam(
-         choices: '4.2.0\n4.2.1\n4.2.2\n4.1.5',
+         choices: '4.1.5\n4.2.0\n4.2.1\n4.2.2',
             description: 'Please select mule runtime version for Deployment?',
             name: 'MULE_RUNTIME_VERSION'
        ),

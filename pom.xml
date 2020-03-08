@@ -24,9 +24,9 @@
 		<anypoint.workers>${workers}</anypoint.workers>
 		<anypoint.businessGroup>${businessGroup}</anypoint.businessGroup>
 		<environment>${env}</environment>
-		<!-- <munit.version>2.1.4</munit.version> -->
+		<munit.version>2.1.4</munit.version>
 		<anypoint.businessGroupId>${businessGroupId}</anypoint.businessGroupId>
-		<munit.version>2.2.3</munit.version>
+		<!-- <munit.version>2.2.3</munit.version> -->
  	</properties>
 
 	<build>
