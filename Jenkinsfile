@@ -20,7 +20,6 @@ pipeline {
 }
 node {
 
-	//def v_environment = ""
 	def v_buildMechanism = ""
 	def v_muleRuntimeEnvironment = ""
 	def v_workers = ""
@@ -161,7 +160,7 @@ This function provides the functionality to build your clode
 def UDF_BuildSourceCode()
 {	
 	try	{
-		bat 'mvn clean package -DskipTests=true'	
+		bat 'mvn clean package'	
 	}catch(error) {
 		throw(error)
 		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
@@ -247,7 +246,6 @@ def UDF_DeployToCloudHub() {
 
 	echo "###### Application Deployment Stage ######"
 
-	//v_environment = "${params.ENVIRONMENT}"
 	v_buildMechanism ="${params.BUILD_MECHANISM}"
 	v_muleRuntimeEnvironment ="${params.MULE_RUNTIME_VERSION}"
 	v_applicationName = "${params.APPLICATION_NAME}"
@@ -400,7 +398,6 @@ def UDF_DeployToCloudHub() {
 
     }
 
-	//echo "ENVIRONMENT is : ${v_environment}"
 	echo "BUILD_MECHANISM is : ${v_buildMechanism}"
 	echo "MULE_RUNTIME_VERSION is : ${v_muleRuntimeEnvironment}"
 	echo "WORKERS : ${v_workers}"
