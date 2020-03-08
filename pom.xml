@@ -58,6 +58,7 @@
 						<region>${anypoint.region}</region>
 						<workerType>${anypoint.workerType}</workerType>
 						<workers>${anypoint.workers}</workers>
+						<objectStoreV2>true</objectStoreV2>
 						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<businessGroupId>${anypoint.businessGroupId}</businessGroupId>
 						<properties>
