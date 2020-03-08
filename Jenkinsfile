@@ -135,10 +135,10 @@ node {
 					
 				stage 'SonarQube Analysis'
 					UDF_ExecuteSonarQubeRules()
-/*
+
 				stage 'ArtifactUploadToNexus'
 					UDF_ArtifactUploadToNexus()
-*/
+
 				stage 'DeployToCloudHub'
 					UDF_DeployToCloudHub()
 
@@ -205,7 +205,7 @@ def UDF_ArtifactUploadToNexus()
 		v_nexusProtocol = "http"
 		v_nexusBaseURL = "localhost:8081"
 		v_nexusRelease = "nexus3"		
-		v_nexusRepository = "ww-releases"		
+		v_nexusRepository = "laxtech-releases"		
 		
 		echo "###### NEXUS REPO DETAILS #########"
 
@@ -223,7 +223,7 @@ def UDF_ArtifactUploadToNexus()
 			groupId: v_groupID,
 			version: v_buildNumber,
 			repository: v_nexusRepository,
-			credentialsId: '40860708-f898-4290-bf94-1b26ace6d908',
+			credentialsId: '62362e0c-f771-4d0c-9761-fd5115bd768f',
 			artifacts: [
 				[artifactId: v_artifactId,
 				 classifier: 'debug',
