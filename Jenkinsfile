@@ -162,8 +162,11 @@ def UDF_BuildSourceCode()
 {	
     mvnSettings = "C:\\Users\\stripathi\\.m2\\settings.xml"
 	try	{
-		echo "mvnSettings : ${mvnSettings}"
-		bat "mvn clean package --settings ${mvnSettings}"	
+		/*echo "mvnSettings : ${mvnSettings}"
+		bat "mvn clean package --settings ${mvnSettings}"	*/
+		withMaven(maven: 'M3', mavenSettingsConfig: 'mvn-settings-example') {
+			bat "mvn clean package "	
+		}
 	}catch(error) {
 		throw(error)
 		SendEmail("gsanjeevtripathi@gmail.com","gsanjeevtripathi@gmail.com","Failed")
