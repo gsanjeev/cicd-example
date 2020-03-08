@@ -13,20 +13,21 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-<!-- 		<app.runtime>4.2.2</app.runtime> -->
+ 		<app.runtime>4.2.2</app.runtime>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 
 		<anypoint.url>https://anypoint.mulesoft.com</anypoint.url>
-		<app.runtime>${muleVersion}</app.runtime>
+<!-- 		<app.runtime>${muleVersion}</app.runtime> -->
 		<anypoint.region>${region}</anypoint.region>
 		<anypoint.env>${environment}</anypoint.env>
 		<anypoint.workerType>${workerType}</anypoint.workerType>
 		<anypoint.workers>${workers}</anypoint.workers>
 		<anypoint.businessGroup>${businessGroup}</anypoint.businessGroup>
 		<environment>${env}</environment>
-		<munit.version>2.1.4</munit.version>
+		<!-- <munit.version>2.1.4</munit.version> -->
+		<munit.version>2.2.3</munit.version>
 		<anypoint.businessGroupId>${businessGroupId}</anypoint.businessGroupId>
-		<!-- <munit.version>2.2.3</munit.version> -->
+		<!--  -->
  	</properties>
 
 	<build>
@@ -50,9 +51,6 @@
 						<muleVersion>${muleVersion}</muleVersion>
  						<username>${anypoint.username}</username>
 						<password>${anypoint.password}</password>
-<!-- 						<username>sanjeev19</username>
-						<password>Pa55word5</password> -->
-						<muleVersion>${muleVersion}</muleVersion>
 						<applicationName>${applicationName}</applicationName>
 						<environment>${anypoint.env}</environment>
 						<region>${anypoint.region}</region>
@@ -83,6 +81,8 @@
 					</execution>
 				</executions>
 				<configuration>
+					<runtimeVersion>${app.runtime}</runtimeVersion>
+					<runtimeProduct>MULE_EE</runtimeProduct>				
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<formats>
