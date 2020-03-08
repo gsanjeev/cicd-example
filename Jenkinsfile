@@ -269,23 +269,23 @@ def UDF_DeployToCloudHub() {
     	Setting the environment
     */
 
-	if("${params.ENVIRONMENT}" == 'DEV') {
+	if("${params.ENVIRONMENT}" == 'dev') {
 
 		v_anypointCredentialID = '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
-	} else if("${params.ENVIRONMENT}" == 'SIT') {
+	} else if("${params.ENVIRONMENT}" == 'sit') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
-	} else if("${params.ENVIRONMENT}" == 'TEST') {
+	} else if("${params.ENVIRONMENT}" == 'test') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
-	} else if("${params.ENVIRONMENT}" == 'PREPROD') {
+	} else if("${params.ENVIRONMENT}" == 'prepod') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 
-	} else if("${params.ENVIRONMENT}" == 'PROD') {
+	} else if("${params.ENVIRONMENT}" == 'prod') {
 
 		v_anypointCredentialID= '171e30c9-59ad-41dd-8690-cb3df34408ee'
 	}
