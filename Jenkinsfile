@@ -203,7 +203,7 @@ def UDF_ArtifactUploadToNexus()
 		v_downloadFilePath = "${env.WORKSPACE}\\target\\${v_artifactId}-${v_version}-${v_package}.jar"	
 		v_buildNumber = "${env.BUILD_NUMBER}"
 		v_nexusProtocol = "http"
-		v_nexusBaseURL = "localhost:8081"
+		v_nexusBaseURL = "localhost:9081"
 		v_nexusRelease = "nexus3"		
 		v_nexusRepository = "laxtech-releases"		
 		
