@@ -147,6 +147,12 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
+        <pluginRepository>
+            <!-- required by MUnit Maven plugin even just for MUnit-testing with the EE runtime -->
+            <id>releases-ee</id>
+            <name>Mule Release Repository</name>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/releases-ee/</url>
+        </pluginRepository>
     </pluginRepositories>
 
 </project>
