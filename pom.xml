@@ -82,7 +82,7 @@
 				</executions>
 				<configuration>
 					<runtimeVersion>${app.runtime}</runtimeVersion>
-					<runtimeProduct>MULE_EE</runtimeProduct>				
+					<!-- <runtimeProduct>MULE_EE</runtimeProduct> -->				
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<formats>
