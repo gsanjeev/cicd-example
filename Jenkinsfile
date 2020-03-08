@@ -35,7 +35,6 @@ node {
 	def v_package = ""
 	def v_downloadFilePath = ""
 	def downloadFilePath = ""
-	def mvnSettings = ""
 
 	properties([
      parameters([
@@ -160,10 +159,7 @@ This function provides the functionality to build your clode
 
 def UDF_BuildSourceCode()
 {	
-    mvnSettings = "C:\\Users\\stripathi\\.m2\\settings.xml"
 	try	{
-		/*echo "mvnSettings : ${mvnSettings}"
-		bat "mvn clean package --settings ${mvnSettings}"	*/
 		withMaven(mavenSettingsConfig: '378899f4-160c-48db-9f5d-8002b5472b7a') {
 			bat "mvn clean package "	
 		}
