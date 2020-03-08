@@ -45,7 +45,7 @@ node {
             name: 'BUILD_MECHANISM'
        ),
        choiceParam(
-         choices: 'DEV\nSIT\nTEST\nPREPROD\nPROD',
+         choices: 'dev\nsit\ntest\npreprod\nprod',
             description: 'Please select the ENVIRONMENT for Deployment',
             name: 'ENVIRONMENT'
        ),

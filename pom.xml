@@ -48,10 +48,10 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${muleVersion}</muleVersion>
-<!-- 						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password> -->
-						<username>sanjeev19</username>
-						<password>Pa55word5</password>
+ 						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
+<!-- 						<username>sanjeev19</username>
+						<password>Pa55word5</password> -->
 						<muleVersion>${muleVersion}</muleVersion>
 						<applicationName>${applicationName}</applicationName>
 						<environment>${anypoint.env}</environment>
